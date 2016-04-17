@@ -1,7 +1,7 @@
 <?php
-   include("secure/db.php");
+   require_once("../secure/db.php");
    session_start();
-  if(!isset($_SESSION['login_user'])){
+  if(!isset($_SESSION['admin'])){
       header("location:login.php");
       die();
    }
@@ -10,7 +10,7 @@
    {
 
 
-   	  $uname = $_SESSION['login_user'];
+   	  $uname = $_SESSION['admin'];
       $sql = "SELECT * FROM users WHERE uname = '$uname'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -23,7 +23,7 @@
 
       #echo '<pre>';
       #print_r($row);
-      #echo $row['uname'];
+      #echo $uname;
       #echo '</pre>';
       #die();      
       $count = mysqli_num_rows($result);
@@ -31,8 +31,9 @@
    }
 
 ?>
-<?php include('header.php'); ?>
-<link rel="stylesheet" type="text/css" href="assets/css/profile.css">
+
+<?php include('../header.php'); ?>
+<link rel="stylesheet" type="text/css" href="../assets/css/profile.css">
 
 <title>Profile</title>
 
@@ -44,7 +45,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <img alt="Geolocation" class="logo" src="assets/images/logo.png">
+        <img alt="Geolocation" class="logo" src="../assets/images/logo.png">
       </a>
     </div>
   </div>

@@ -1,14 +1,12 @@
   <?php
-   include("secure/db.php");
+   require_once("../secure/db.php");
    session_start();
-   if(isset($_SESSION['login_user'])){
-      header("location:student.php");
+   if(isset($_SESSION['student'])){
+      header("location: index.php");
       die();
    }
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
+   if($_SERVER["REQUEST_METHOD"] == "POST") {    
       $uname = mysqli_real_escape_string($db,$_POST['uname']);
       $password = mysqli_real_escape_string($db,$_POST['password']); 
       
@@ -22,16 +20,15 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
         
       if($count == 1) {
-         $_SESSION['login_user'] = $uname;
-         
-         header("location: student.php");
+         $_SESSION['student'] = $uname;
+         header("location: index.php");
       }else {
          $error = "Your Login Name or Password is invalid";
          $flag = 1;
       }
    }
 ?>
-    <?php include('header.php'); ?>
+    <?php include('../header.php'); ?>
     <title>Login</title>
     </head>
     <body>
@@ -44,7 +41,7 @@
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
-                    <img src="assets/images/logo.png" class="img-responsive center-block">
+                    <img src="../assets/images/logo.png" class="img-responsive center-block">
                     
                     <?php if($flag==1): ?>
                         <div id="login-alert" class="alert alert-danger col-sm-12">Login Failed! Invalid Credentials</div>

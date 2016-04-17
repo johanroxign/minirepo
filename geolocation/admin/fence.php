@@ -30,7 +30,7 @@
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 80%;
         width: 50%;
         float: left;
       }
@@ -236,6 +236,13 @@ function gcode(pid) {
           document.getElementById('encoded-polyline').value = encodeString;
         }
       }
+    </script>
+    <script type="text/javascript">
+      $(function(){
+        $("form").submit(function(e){
+                e.preventDefault();
+            });
+      });
     </script>
     
   </body>

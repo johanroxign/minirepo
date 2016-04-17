@@ -1,7 +1,7 @@
-n    <?php
-   include("secure/db.php");
+<?php
+   require_once("../secure/db.php");
    session_start();
-   if(isset($_SESSION['login_user'])){
+   if(isset($_SESSION['admin'])){
       header("location:profile.php");
       die();
    }
@@ -22,16 +22,16 @@ n    <?php
       // If result matched $myusername and $mypassword, table row must be 1 row
         
       if($count == 1) {
-         $_SESSION['login_user'] = $uname;
+         $_SESSION['admin'] = $uname;
          
-         header("location: profile.php");
+         header("location: index.php");
       }else {
          $error = "Your Login Name or Password is invalid";
          $flag = 1;
       }
    }
 ?>
-    <?php include('header.php'); ?>
+    <?php include('../header.php'); ?>
     <title>Login</title>
     </head>
     <body>
@@ -44,7 +44,7 @@ n    <?php
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
-                    <img src="assets/images/logo.png" class="img-responsive center-block">
+                    <img src="../assets/images/logo.png" class="img-responsive center-block">
                     
                     <?php if($flag==1): ?>
                         <div id="login-alert" class="alert alert-danger col-sm-12">Login Failed! Invalid Credentials</div>
