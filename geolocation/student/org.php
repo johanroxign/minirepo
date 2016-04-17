@@ -88,8 +88,8 @@
         <!-- SIDEBAR MENU -->
         <div class="profile-usermenu">
           <ul class="nav">
-            <li class="active">
-              <a href="#">
+            <li>
+              <a href="profile.php">
               <i class="glyphicon glyphicon-home"></i>
               Get Current Location </a>
             </li>
@@ -103,7 +103,7 @@
               <i class="glyphicon glyphicon-ok"></i>
               Account Settings </a>
             </li>
-            <li>
+            <li class="active">
               <a href="org.php">
               <i class="glyphicon glyphicon-flag"></i>
               About Organization </a>
@@ -120,7 +120,13 @@
     </div>
     <div class="col-md-9">
             <div class="profile-content">
-              <div id="map"></div>
+                <div class="hero-unit">
+                <h1><strong>Organization</strong></h1>
+                  <h3>Name : <strong><?= $org_data['org_name']; ?></strong></h3>
+                  <h4>Category : <strong><?= $org_data['org_type']; ?></strong></h4>
+                  
+                  <img src="../assets/org_data/<?= $org_data['org_image']; ?>" class="center-block img-thumbnail img-responsive"/>                                  
+              </div>
             </div>
     </div>
   </div>
@@ -130,84 +136,6 @@
 </center>
 <br>
 <br>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places&callback=initMap" async defer></script>
-<script type="text/javascript">
-function initMap() 
-{
-     var map = new google.maps.Map(document.getElementById('map'), {
-             zoom: 15,
-             center: {
-                 lat: 9.9000,
-                 lng: 76.7170
-             },
-             mapTypeId: google.maps.MapTypeId.ROADMAP
-         });
-     var geocoder = new google.maps.Geocoder();
-     var contentString =
-         '<h2>We detected this as your Location</h2><small>Drag and Drop to change location</small>';
-     var infowindow = new google.maps.InfoWindow({
-         content: contentString
-     });
-    if (navigator.geolocation) 
-    {
-     navigator.geolocation.getCurrentPosition(
-         function(position) {
-             var pos = {
-                 lat: position.coords.latitude,
-                 lng: position.coords.longitude
-             };            
-             console.log(position);
-             var marker = new google.maps.Marker({
-                 position: pos,
-                 map: map,
-                 draggable: true,
-                 title: 'Your Location'
-             });
-             geocoder.geocode({
-                 'location': pos
-             }, function(results, status) {
-                 if (status === google.maps.GeocoderStatus
-                     .OK) {                    
-                     if (results[1]) {
-                         infowindow.setContent(
-                             '<h4>We detected this as your Location</h4><br>' + results[1].formatted_address);                         
-                     }
-                 }
-             });
-             marker.addListener('click',function() {
-                     // 3 seconds after the center of the map has changed, pan back to the
-                     // marker.
-                     var pos = {
-                         lat: this.position.lat(),
-                         lng: this.position.lng()
-                     };
-                     geocoder.geocode({
-                         'location': pos
-                     }, function(results, status) {
-                         if (status === google.maps.GeocoderStatus
-                             .OK) {
-                             if (results[1]) {
-                                 infowindow.setContent('<h4>We detected this as your Location</h4><br><blockquote style="color:green"> <h5>'+results[1].formatted_address +'</h5></blockquote><br><a class="btn btn-success" href="#">Save position</a>');
-                                 infowindow.open(map,marker);
-                             }
-                         }
-                     });
-                 });
-             map.setCenter(pos);
-         },
-         function() {
-             handleLocationError(true,
-                 infoWindow, map.getCenter());
-         });
-    } 
-    else 
-    {
-     // Browser doesn't support Geolocation
-     handleLocationError(false, infoWindow,
-         map.getCenter());
-    }
-}
-</script>
   
 </body>
 
