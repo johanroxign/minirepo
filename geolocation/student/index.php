@@ -219,6 +219,10 @@ var origin_input = document.getElementById('place-input');
 
 });
 
+  var center = new google.maps.LatLng(9.951518529111583,76.62963112816215);
+
+  //var center = [{lat: 9.951518529111583, lng: 76.62963112816215}];
+
   var VJC = new google.maps.Polygon({paths: cord});
 
   google.maps.event.addListener(map, 'click', function(e) {
@@ -226,6 +230,7 @@ var origin_input = document.getElementById('place-input');
         google.maps.geometry.poly.containsLocation(e.latLng, VJC) ?
         alert("User inside") :
         alert("User outside");
+        console.log(e.latLng);
 
     new google.maps.Marker({
       position: e.latLng,
