@@ -2,7 +2,7 @@
 <?php
    include("../secure/db.php");
    session_start();
-  if(!isset($_SESSION['student'])){
+  if(!isset($_SESSION['admin'])){
       header("location:login.php");
       die();
    }
@@ -27,23 +27,20 @@
       $count = mysqli_num_rows($result);
       echo ' <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places"></script>
          <script>
-
-$(function(){
-
-  var pos = new google.maps.LatLng('.$_POST['lat'].','.$_POST['lat'].');
-
-
-  var cord = google.maps.geometry.encoding.decodePath(\''.$org_data['org_location'].'\');
-
-
-  var VJC = new google.maps.Polygon({paths: cord});
-
-    var resultColor =
-        google.maps.geometry.poly.containsLocation(pos, VJC) ?
-        $("#state").html("inside") :
-        $("#state").html("outside");
-        console.log(resultColor);
-
+    $(document).ready(function() {
+          var pos = new google.maps.LatLng('.$_POST['lat'].','.$_POST['lng'].');
+          var cord = google.maps.geometry.encoding.decodePath(\''.$org_data['org_location'].'\');
+          var VJC = new google.maps.Polygon({paths: cord});
+          var response = google.maps.geometry.poly.containsLocation(pos, VJC);
+          if(response===true){
+              $("#state").addClass("alert-success");
+              $("#state").html("'.$row['full_name'].' is Inside!");
+            }
+            else{
+              $("#state").addClass("alert-danger");
+              $("#state").html("'.$row['full_name'].' is Outside!");
+            }
+            console.log(response);
        }); 
 </script>
 ';
@@ -85,7 +82,7 @@ $(function(){
 
               <div class="panel-body" >
 
-                  <div id="state" class="alert alert-danger col-sm-12"></div>
+                  <div id="state" class="alert col-sm-12"></div>
                       
                   <form id="loginform" style="padding:3%" class="form-horizontal" role="form" method="POST">
                               
