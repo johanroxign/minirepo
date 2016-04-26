@@ -97,6 +97,11 @@
 							Account Settings </a>
 						</li>
 						<li>
+							<a href="tracker.php">
+							<i class="glyphicon glyphicon-flag"></i>
+							See who's out </a>
+						</li>
+						<li>
 							<a href="logout.php">
 							<i class="glyphicon glyphicon-flag"></i>
 							Logout </a>

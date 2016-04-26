@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.0.4.2
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 27, 2016 at 04:24 AM
--- Server version: 5.5.47-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.14
+-- Generation Time: Apr 26, 2016 at 11:33 AM
+-- Server version: 5.6.13
+-- PHP Version: 5.4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `geo`
 --
+CREATE DATABASE IF NOT EXISTS `geo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `geo`;
 
 -- --------------------------------------------------------
 
@@ -80,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `status` (
   `lng` varchar(40) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `status`
@@ -88,10 +90,7 @@ CREATE TABLE IF NOT EXISTS `status` (
 
 INSERT INTO `status` (`id`, `status`, `uname`, `lat`, `lng`, `time`) VALUES
 (1, 'inside', '', '', '', '2016-04-26 11:07:28'),
-(2, 'inside', '13rr171', '9.951467673429736', '76.62987470626831', '2016-04-26 11:18:00'),
-(3, 'outside', '13rr171', '9.98456', '79.1059', '2016-04-26 21:46:58'),
-(4, 'outside', '13rr147', '9.98456', '79.1059', '2016-04-26 21:48:10'),
-(5, 'outside', '13rr147', '9.891999424489525', '76.71587705612183', '2016-04-26 21:49:01');
+(2, 'inside', '13rr171', '9.951467673429736', '76.62987470626831', '2016-04-26 11:18:00');
 
 -- --------------------------------------------------------
 
