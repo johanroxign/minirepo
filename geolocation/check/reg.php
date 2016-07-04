@@ -1,14 +1,14 @@
 <?PHP
-    require_once("secure/db.php");
+    include_once("connection.php");
 
-if( isset($_POST['username']) &&  isset($_POST['lattitude']) && isset($_POST['longitude']) ){
-   $a=$_POST['username'];
-    $i = $_POST['lattitude'];
-    $j = $_POST['longitude'];
+if(isset($_POST['username']) && isset($_POST['password'])){
+   
+    $i = $_POST['username'];
+    $j = $_POST['password'];
    
 
-    $query = "INSERT INTO data(username,lattitude,longitude) 
-    VALUES ('$a','$i','$j')"; 
+    $query = "INSERT INTO student(username,password) 
+    VALUES ('$i','$j')"; 
     
     $result = mysqli_query($conn, $query);
 
@@ -31,7 +31,7 @@ if( isset($_POST['username']) &&  isset($_POST['lattitude']) && isset($_POST['lo
 
 ?>
 <html>
-<head> <title>Student Assistant Application</title>
+<head> <title>Android</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -65,21 +65,12 @@ if( isset($_POST['username']) &&  isset($_POST['lattitude']) && isset($_POST['lo
                 <br>
                 <br>
                 <td colspan="1" width="200px" align="center" >Username</td>
-                <td><input type="text" name="username"   /></td>
+                <td><input type="text" name="username"  placeholder="myusername or mymail@mail.com" required /></td>
                 </tr>
                 <tr>
                 <td colspan="1" width="200px" align="center" >password</td>
-                <td> <input type="text" name="lattitude"  /></td>
-                </tr>
-                <tr>
-                 <td colspan="1" width="200px" align="center" >password</td>
-                 <td> <input type="text" name="longitude"  /></td>
-                 </tr>
-                 <tr>
-                 <td colspan="1" width="200px" align="center" >status</td>
-                 <td> <input type="text" name="status"  /></td>
-                 </tr>
-                  
+                <td> <input name="password" required="required" type="password" placeholder="eg. X8df!90EO" required /></td>
+                  </tr>
                   <br>
                   <br>
                   <tr>

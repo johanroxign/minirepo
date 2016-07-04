@@ -23,9 +23,10 @@ if($_GET){
       $org_data = mysqli_fetch_array($result2,MYSQLI_ASSOC);
    
       $count = mysqli_num_rows($result);
-      echo ' <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places"></script>
+      echo ' <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places&callback=test"></script>
          <script>
-    $(document).ready(function() {
+          function test(){
+
           var pos = new google.maps.LatLng('.$_GET['lat'].','.$_GET['lng'].');
           var cord = google.maps.geometry.encoding.decodePath(\''.$org_data['org_location'].'\');
           var VJC = new google.maps.Polygon({paths: cord});
@@ -66,7 +67,7 @@ if($_GET){
                   }
               });              
             }            
-       }); 
+      }
 </script>
 ';
     }
