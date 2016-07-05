@@ -165,7 +165,7 @@
 	</div>
 </div>
 <center>
-<strong>Powered by <a href="#" target="_blank">Johaan Varghese</a></strong>
+<strong>Project - <a href="#" target="_blank">Geo Location and Geo Fencing System</a></strong>
 </center>
 <br>
 <br>

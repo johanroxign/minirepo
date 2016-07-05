@@ -2,7 +2,7 @@
    require_once("../secure/db.php");
    session_start();
    if(isset($_SESSION['student'])){
-      header("location: index.php");
+      header("location: profile.php");
       die();
    }
    
@@ -21,7 +21,7 @@
         
       if($count == 1) {
          $_SESSION['student'] = $uname;
-         header("location: index.php");
+         header("location: profile.php");
       }else {
          $error = "Your Login Name or Password is invalid";
          $flag = 1;

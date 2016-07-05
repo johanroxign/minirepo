@@ -356,19 +356,19 @@ body {
 			                        </div>
 			                        <div class="panel-body">
 			                            <div class="login-box">
-			                                <form action="">			                                    
+			                                <form action="admin/login.php" method="POST">			                                    
 			                                    <div class="form-group">
-			                                        <label for="username-email">E-mail or
+			                                        <label for="username-email">
 			                                        Username</label> <input class=
 			                                        "form-control" id="username-email"
 			                                        placeholder="E-mail or Username" type=
-			                                        "text" value=''>
+			                                        "text" name="uname" value=''>
 			                                    </div>
 			                                    <div class="form-group">
 			                                        <label for="password">Password</label>
 			                                        <input class="form-control" id=
-			                                        "password" placeholder="Password" type=
-			                                        "text" value=''>
+			                                        "password" placeholder="Password" name="password" type=
+			                                        "password" value=''>
 			                                    </div>
 			                                    <div class="input-group">
 			                                        <div class="checkbox">
@@ -395,34 +395,24 @@ body {
 				                    </div>
 				                    <div class="panel-body">
 				                        <div class="login-box">
-				                            <form action="">				                                
+				                            <form action="student/login.php" method="POST">				                                
 				                                <div class="form-group">
-				                                    <label for="username-email">E-mail or
-				                                    Username</label> <input class=
+				                                    <label for="username-email">Username</label> <input class=
 				                                    "form-control" id="username-email"
-				                                    placeholder="E-mail or Username" type=
+				                                    placeholder="E-mail or Username" name="uname" type=
 				                                    "text" value=''>
 				                                </div>
 				                                <div class="form-group">
 				                                    <label for="password">Password</label>
 				                                    <input class="form-control" id="password"
-				                                    placeholder="Password" type="text" value=
+				                                    placeholder="Password" name="password" type="password" value=
 				                                    ''>
-				                                </div>
-				                                <div class="input-group">
-				                                    <div class="checkbox">
-				                                        <label><input id="login-remember" name=
-				                                        "remember" type="checkbox" value="1">
-				                                        Remember me</label>
-				                                    </div>
-				                                </div>
+				                                </div>				                                
 				                                <div class="form-group">
 				                                    <input class=
 				                                    "btn btn-default btn-login-submit btn-block m-t-md"
 				                                    type="submit" value="Login">
-				                                </div><span class='text-center'><a class=
-				                                "text-sm" href="/resetting/request">Forgot
-				                                Password?</a></span>
+				                                </div>
 				                                <div class="form-group">
 				                                    <p class="text-center m-t-xs text-sm">Do
 				                                    not have an account?</p><a class=
