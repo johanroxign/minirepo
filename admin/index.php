@@ -119,10 +119,7 @@
 	</div>
 </div>
 <center>
-<strong>Powered by <a href="#" target="_blank">Johaan Varghese</a></strong>
 </center>
-<br>
-<br>
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places&callback=initMap" async defer></script>
 <script type="text/javascript">
 function initMap() 
@@ -201,7 +198,7 @@ function initMap()
 		}
 }
 </script>
-	
+	<?php include '../footer.php'; ?>
 </body>
 
 </html>

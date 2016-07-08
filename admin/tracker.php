@@ -164,13 +164,7 @@
 		</div>
 	</div>
 </div>
-<center>
-<strong>Powered by <a href="#" target="_blank">Johaan Varghese</a></strong>
-</center>
-<br>
-<br>
- 
-	
+	<?php include '../footer.php'; ?>	
 </body>
 
 </html>

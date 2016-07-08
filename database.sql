@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2016 at 11:44 PM
+-- Generation Time: Jul 08, 2016 at 01:41 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.16
+-- PHP Version: 5.5.9-1ubuntu4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,7 +34,17 @@ CREATE TABLE IF NOT EXISTS `data` (
   `status` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `data`
+--
+
+INSERT INTO `data` (`id`, `username`, `lattitude`, `longitude`, `status`) VALUES
+(1, 'tom', '9.9357222', '76.7757283', 'outside'),
+(2, 'tom', '10.0314161', '76.6694261', 'outside'),
+(3, 'tom', '10.0314161', '76.6694261', 'outside'),
+(4, 'tom', '10.0314161', '76.6694261', 'outside');
 
 -- --------------------------------------------------------
 
@@ -74,7 +84,29 @@ CREATE TABLE IF NOT EXISTS `status` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `uname` (`uname`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `status`, `uname`, `lat`, `lng`, `time`) VALUES
+(1, 'outside', 'tom', '9.2478731', '76.8441803', '2016-07-08 03:26:25'),
+(9, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 03:34:45'),
+(10, 'outside', 'tom', '9.2478737', '76.8441822', '2016-07-08 03:46:55'),
+(11, 'outside', 'tom', '9.2478737', '76.8441822', '2016-07-08 03:55:56'),
+(12, 'outside', 'tom', '10.0145227', '76.6745987', '2016-07-08 04:43:08'),
+(13, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 04:43:39'),
+(14, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 04:43:39'),
+(15, 'outside', 'tom', '9.9357222', '76.7757283', '2016-07-08 04:44:01'),
+(16, 'outside', 'tom', '10.0145227', '76.6745987', '2016-07-08 04:44:09'),
+(17, 'outside', 'tom', '10.0145227', '76.6745987', '2016-07-08 04:44:09'),
+(18, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 04:44:10'),
+(19, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 04:44:10'),
+(20, 'outside', 'tom', '9.9357222', '76.7757283', '2016-07-08 04:46:24'),
+(21, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 05:27:41'),
+(22, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 05:28:11'),
+(23, 'outside', 'tom', '10.0314161', '76.6694261', '2016-07-08 05:28:11');
 
 -- --------------------------------------------------------
 
@@ -95,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   KEY `org_id` (`org_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `student`
@@ -104,7 +136,8 @@ CREATE TABLE IF NOT EXISTS `student` (
 INSERT INTO `student` (`uid`, `username`, `full_name`, `password`, `phone`, `email`, `org_id`, `time`) VALUES
 (1, 'tom', 'Tom George', 'tom', NULL, 'me@tomgeorge.me', 1, '2016-07-07 18:12:42'),
 (4, 'sebin', 'Sebin Paul', 'sebin', NULL, 'sebinchakanal@gmail.com', 2, '2016-07-07 18:12:51'),
-(5, 'ff', 'Test User', 'ff', NULL, 'ff@gmail.com', 1, '2016-07-07 18:12:58');
+(5, 'ff', 'Test User', 'ff', NULL, 'ff@gmail.com', 1, '2016-07-07 18:12:58'),
+(7, 'dennis', 'Dennis K Bijo', 'dennis', NULL, 'dkb@gmail.com', NULL, '2016-07-08 05:37:25');
 
 -- --------------------------------------------------------
 

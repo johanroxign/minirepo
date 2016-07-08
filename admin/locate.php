@@ -126,12 +126,8 @@
 		</div>
 	</div>
 </div>
-<center>
-<strong>Powered by <a href="#" target="_blank">Johaan Varghese</a></strong>
-</center>
-<br>
-<br>
- 
+	<?php include '../footer.php'; ?>
+
 	
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places&callback=initMap" async defer></script>

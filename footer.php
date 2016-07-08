@@ -44,7 +44,7 @@ footer { background-color:#0c1a1e; min-height:200px; font-family: 'Open Sans', s
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft ">        
-        <img src="assets/images/logo2.png" class="img-responsive">        
+        <img src="http://geofence.in/assets/images/logo2.png" class="img-responsive">        
       </div>
      <!-- <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">GENERAL LINKS</h6>
@@ -67,7 +67,7 @@ footer { background-color:#0c1a1e; min-height:200px; font-family: 'Open Sans', s
         </div>
       </div> -->
       <div class="col-md-3 col-sm-6 paddingtop-bottom pull-right">        
-          <img src="assets/images/app.png" class="img-responsive">
+          <img src="http://geofence.in/assets/images/app.png" class="img-responsive">
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ footer { background-color:#0c1a1e; min-height:200px; font-family: 'Open Sans', s
 <div class="copyright">
   <div class="container">
     <div class="col-md-6">
-      <p class="text-center">© <?php echo date("Y"); ?> - Geofence.in | Geo Location And Geo Fencing System</p>
+      <p class="text-center">&copy; <?php echo date("Y"); ?> - Geofence.in | Geo Location And Geo Fencing System</p>
     </div>
   </div>
 </div>
