@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2016 at 10:27 AM
+-- Generation Time: Jul 07, 2016 at 11:44 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.17
+-- PHP Version: 5.5.9-1ubuntu4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS `data` (
   `lattitude` varchar(50) NOT NULL,
   `longitude` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -71,23 +72,9 @@ CREATE TABLE IF NOT EXISTS `status` (
   `lat` varchar(40) NOT NULL,
   `lng` varchar(40) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `status`
---
-
-INSERT INTO `status` (`id`, `status`, `uname`, `lat`, `lng`, `time`) VALUES
-(1, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:36:54'),
-(2, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:37:19'),
-(3, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:38:49'),
-(4, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:38:52'),
-(5, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:38:57'),
-(6, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:38:59'),
-(7, 'outside', '13rr171', '9.8756528', '76.6175589', '2016-07-07 10:39:01'),
-(8, 'outside', 'ff', '9.889572', '76.6494534', '2016-07-07 10:39:08'),
-(9, 'outside', 'ff', '9.8864506', '76.6233809', '2016-07-07 10:40:12');
+  PRIMARY KEY (`id`),
+  KEY `uname` (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -104,20 +91,20 @@ CREATE TABLE IF NOT EXISTS `student` (
   `email` varchar(200) DEFAULT NULL,
   `org_id` int(11) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  KEY `org_id` (`org_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `student`
 --
 
 INSERT INTO `student` (`uid`, `username`, `full_name`, `password`, `phone`, `email`, `org_id`, `time`) VALUES
-(1, '13rr171', 'Tom George', '13rr171', NULL, NULL, 1, '2016-04-17 06:40:23'),
-(2, '13rr147', 'Johaan Varghese', '13rr147', NULL, NULL, 1, '2016-04-27 07:00:04'),
-(6, 'amal', '', 'amal', NULL, NULL, NULL, '2016-04-26 17:07:37'),
-(7, '13rr132 ', '', '13rr132', NULL, NULL, NULL, '2016-04-26 18:48:40'),
-(11, 'ff', '', 'ff', NULL, NULL, 1, '2016-07-07 09:37:34'),
-(14, 'hai', '', 'hai', NULL, NULL, NULL, '2016-07-07 07:13:02');
+(1, 'tom', 'Tom George', 'tom', NULL, 'me@tomgeorge.me', 1, '2016-07-07 18:12:42'),
+(4, 'sebin', 'Sebin Paul', 'sebin', NULL, 'sebinchakanal@gmail.com', 2, '2016-07-07 18:12:51'),
+(5, 'ff', 'Test User', 'ff', NULL, 'ff@gmail.com', 1, '2016-07-07 18:12:58');
 
 -- --------------------------------------------------------
 
@@ -147,6 +134,28 @@ INSERT INTO `users` (`uid`, `uname`, `name`, `password`, `fbid`, `org_id`, `crea
 (3, 'arun', 'Arun VB', 'arun', '100001503593794', NULL, '2016-04-09 04:58:22', NULL),
 (4, 'dennis', 'Dennis K Bijo', 'dennis', '100001488248157', NULL, '2016-04-09 04:58:34', NULL),
 (5, 'tom', 'Tom George', 'tom', '100001874225389', NULL, '2016-04-09 04:58:46', NULL);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `data`
+--
+ALTER TABLE `data`
+  ADD CONSTRAINT `data_ibfk_1` FOREIGN KEY (`username`) REFERENCES `student` (`username`);
+
+--
+-- Constraints for table `status`
+--
+ALTER TABLE `status`
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`uname`) REFERENCES `student` (`username`);
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`org_id`) REFERENCES `org` (`org_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

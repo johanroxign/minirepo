@@ -16,17 +16,25 @@ if( isset($_POST['username']) &&  isset($_POST['lattitude']) && isset($_POST['lo
       $result2 = mysqli_query($conn,$sql2);
       $org_data = mysqli_fetch_array($result2,MYSQLI_ASSOC);
       #print_r($result2);
+      $loc = $org_data['org_location'];
+
+      $status = file_get_contents("http://geofence.in/api.php?lat=$i&lng=$j&loc=$loc");
    
       $count = mysqli_num_rows($result);
       echo ' success';
 
-$status = $_POST['status'];
+//$status = $_POST['status'];
 
 
     $query = "INSERT INTO data(username,lattitude,longitude,status) 
     VALUES ('$a','$i','$j','$status')"; 
     
     $result = mysqli_query($conn, $query);
+
+    $status_query = "INSERT INTO status(status,uname,lat,lng) VALUES ('$status','$a','$i','$j')"; 
+
+    $result2 = mysqli_query($conn, $status_query);
+
 
     if($result > 0){
         if(isset($_POST['mobile']) && $_POST['mobile'] == "android"){

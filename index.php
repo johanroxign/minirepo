@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Student Assistant Application</title>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="temp.css">
-<style type="text/css">
-    #map {
-        float: none;
-        margin: 0 auto;
-        height: 600px;
-        width:100%;
-      }
-</style>
+    <!-- Bootstrap Core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<title>Mini Project</title>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 <header>
- <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -36,272 +45,393 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
+      <a class="navbar-brand" href="#">Geo Fencing</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="about.html" target="">About <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Contact Us <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Arun V.B</a></li>
-            <li><a href="#">Dennis K Bijo</a></li>
-            <li><a href="#">Johan varghese</a></li>
-            <li><a href="#">Sebin Paul</a></li>
-            <li role="separator" class="divider"></li>
-
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Active Users</a></li>
-            <li><a href="#">Recent Users</a></li>
-            <li><a href="#">User locations</a></li>
-            <li role="separator" class="divider"></li>
-
-          </ul>
-        </li>
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="admin.php">Admin</a></li>
+        <li><a href="college.php">Colleges</a></li>
+        <li><a href="university.php">University</a></li>
+        <li><a href="quest.html">Quest</a></li>
+        <li><a href="student.php">Student</a></li> 
+        <li><a href="quest_view.php">View Previous Questions</a></li>  
+        <li><a href="http://syllabkerala.in/forum">Forum</a></li>               
+             
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" id="place-input" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-       
-           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-      <ul id="login-dp" class="dropdown-menu">
-        <li>
-           <div class="row">
-              <div class="col-md-12">
-                Login via
-                <div class="social-buttons">
-                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                  <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                </div>
-                                or
-                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                    <div class="form-group">
-                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                    </div>
-                    <div class="form-group">
-                       <label class="sr-only" for="exampleInputPassword2">Password</label>
-                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                    </div>
-                    <div class="form-group">
-                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                    </div>
-                    <div class="checkbox">
-                       <label>
-                       <input type="checkbox"> keep me logged-in
-                       </label>
-                    </div>
-                 </form>
-              </div>
-              <div class="bottom text-center">
-                New here ? <a href="#"><b>Join Us</b></a>
-              </div>
-           </div>
-        </li>
-      </ul>
-        </li>
-        </li>
+              
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 </header>
-      <div id="wrapper">
-        <div class="overlay"></div>
-    
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                       Menu
-                    </a>
-                </li>
-                <li>
-                    <a href="">Home</a>
-                </li>
-                
-                
-                
-                    
-                
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Developers</li>
-                    
-                    <li><a href="http://fb.me/arun.v.babu" target="_blank">Arun V.B</a></li>
-                    <li><a href="http://fb.me/DennisKBijo" target="_blank">Dennis K Bijo</a></li>
-                    <li><a href="#">Sebin Paul</a></li>
-                    <li><a href="http://fb.me/johanrocksu" target="_blank">Johan Varghese</a></li>
-                    
-                  </ul>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                
-            </ul>
-        </nav>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-                <span class="hamb-top"></span>
-            <span class="hamb-middle"></span>
-        <span class="hamb-bottom"></span>
-            </button>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMtYmJp8Hhtxn-6TVi0U4y_Mh_HW6tCS0&signed_in=true&libraries=geometry,places&callback=initMap"
-         async defer></script>
-         <script>
-
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 9.951518529111583, lng: 76.62963112816215},
-    zoom: 17,
-  });
-
-  var triangleCoords = [
-{lat : 9.951607939325209 ,lng : 76.62915989756584 },
-{lat : 9.95084997440219 ,lng : 76.63002222776413 },
-{lat : 9.95059635585848 ,lng : 76.6313311457634 },
-{lat : 9.950532951191768 ,lng : 76.63226455450058 },
-{lat : 9.951346643479768 ,lng : 76.63173884153366 },
-{lat : 9.95165309849122 ,lng : 76.63070887327194 },
-{lat : 9.951748205160428 ,lng : 76.62985056638718 }
-
-  ];
-
-  var cord = google.maps.geometry.encoding.decodePath('{rv{@qsurMtBkEt@eE@eB@kB]]i@n@}AhAm@|AUpBUlBJ|A?lALnAp@m@');
-
-var origin_input = document.getElementById('place-input');
-  var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
-  origin_autocomplete.addListener('place_changed', function() {
-  var place = origin_autocomplete.getPlace();
-  if (!place.geometry) {
-      window.alert("Autocomplete's returned place contains no geometry");
-      return;
+<style type="text/css">
+  .center-block
+  {
+    float: none;
   }
+  .padding
+  {
+    padding: 1%;
+  }
+  /*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
 
-  origin_place_id = place.place_id;
-  console.log(origin_place_id);
-  console.log(place.formatted_address);
-  gcode(origin_place_id);
-
-});
-
-  var VJC = new google.maps.Polygon({paths: cord});
-
-  google.maps.event.addListener(map, 'click', function(e) {
-    var resultColor =
-        google.maps.geometry.poly.containsLocation(e.latLng, VJC) ?
-        alert("User inside") :
-        alert("User outside");
-
-    new google.maps.Marker({
-      position: e.latLng,
-      map: map,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: resultColor,
-        fillOpacity: .2,
-        strokeColor: 'white',
-        strokeWeight: .5,
-        scale: 10
-      }
-    });
-  });
-
-
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 50vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 50vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
 }
 
-function showmap(pid, lat, lng) {
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: lat, lng: lng },
-        zoom: 15,
-        draggable: true
-    });
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 2px black;
 }
 
-
-function gcode(pid) {
-    var geocoder = new google.maps.Geocoder;
-    geocoder.geocode({'placeId': pid},
-     function(results, status) {
-        var lat = results[0].geometry.location.lat();
-        var lng = results[0].geometry.location.lng();
-        var cord = [lat, lng];
-
-        showmap(pid, lat, lng);
- 
-        console.log(lat + "," + lng);
-      });
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s; 
+        -ms-transition: 2s all ease-in-out .1s; 
+         -o-transition: 2s all ease-in-out .1s; 
+            transition: 2s all ease-in-out .1s;    
 }
 
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(8, 13, 21, 0.25);
+    opacity: .3;
+}
 
-    </script>
-        
-    <script type="text/javascript">
-      $(document).ready(function () {
-          var trigger = $('.hamburger'),
-              overlay = $('.overlay'),
-             isClosed = false;
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
 
-            trigger.click(function () {
-              hamburger_cross();      
-            });
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(assets/images/banner.png); 
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(assets/images/gpss.jpg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(assets/images/b2.png);
+}
 
-            function hamburger_cross() {
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
+}
+  /*--------*/
+ /*  LOGIN */
+/*--------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+body {
+    background-color: #f9f9f9 !important;
+    font-family: 'Open Sans', sans-serif!important;
+    font-size:11px;
+}
+.well{
+    background-color:#fff!important;
+    border-radius:0!important;
+    border:black solid 1px;
+}
 
-              if (isClosed == true) {          
-                overlay.hide();
-                trigger.removeClass('is-open');
-                trigger.addClass('is-closed');
-                isClosed = false;
-              } else {   
-                overlay.show();
-                trigger.removeClass('is-closed');
-                trigger.addClass('is-open');
-                isClosed = true;
-              }
-          }
-          
-          $('[data-toggle="offcanvas"]').click(function () {
-                $('#wrapper').toggleClass('toggled');
-          });  
-        });
-    </script>
-    
+.well.login-box {
+    /*width:400px; */
+    border:#d1d1d1 solid 1px;
+    margin:0 auto;
+    margin-top:30px;
+}
+.well.login-box legend {
+  font-size:26px;
+  text-align:center;
+  font-weight:300;
+}
+.well.login-box label {
+  font-weight:300;
+  font-size:13px;
+  
+}
+.well.login-box input[type="text"] {
+  box-shadow:none;
+  border-color:#ddd;
+  border-radius:0;
+}
 
+.well.welcome-text{
+    font-size:21px;
+}
+
+/* Notifications */
+
+.notification{
+    position:fixed;
+    top: 20px;
+    right:0;
+    background-color:#FF4136;
+    padding: 20px;
+    color: #fff;
+    font-size:21px;
+    display:none;
+}
+.notification-success{
+  background-color:#3D9970;
+}
+
+.notification-show{
+    display:block!important;
+}
+
+/*Loged in*/
+.btn-default {
+    color: #333;
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    border: 1px solid;
+    text-align: center;
+    cursor: pointer;
+    color: #5e5e5e;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #f9f9f9)), #f9f9f9;
+    background: -moz-linear-gradient(#fefefe, #f9f9f9), #f9f9f9;
+    background: -webkit-linear-gradient(#fefefe, #f9f9f9), #f9f9f9;
+    background: linear-gradient(#fefefe, #f9f9f9), #f9f9f9;
+    border-color: #c3c3c3 #c3c3c3 #bebebe;
+    -moz-box-shadow: rgba(0, 0, 0, 0.06) 0 1px 0, rgba(255, 255, 255, 0.1) 0 1px 0 0 inset;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.06) 0 1px 0, rgba(255, 255, 255, 0.1) 0 1px 0 0 inset;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 1px 0, rgba(255, 255, 255, 0.1) 0 1px 0 0 inset;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<div class="container-fluid">
+	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+		  <!-- Overlay -->
+		  <div class="overlay"></div>
+
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#bs-carousel" data-slide-to="1"></li>
+		    <li data-target="#bs-carousel" data-slide-to="2"></li>
+		  </ol>
+		  
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    <div class="item slides active">
+		      <div class="slide-1"></div>
+		      <div class="hero">
+		        <hgroup>                 
+		            <h1>GEO LOCATION AND GEO FENCING SYSTEM</h1>
+		        </hgroup>        
+		      </div>
+		    </div>
+		    <div class="item slides">
+		      <div class="slide-2"></div>
+		      <div class="hero">        
+		        <hgroup>
+		            <h1>Location Tracking</h1>                    
+		        </hgroup>               
+		      </div>
+		    </div>
+		    <div class="item slides">
+		      <div class="slide-3"></div>
+		      <div class="hero">        
+		        <hgroup>
+		            <h1>Live Update</h1>    
+		            <h3>Get live updates on your smartphone</h3>                
+		        </hgroup>        
+		      </div>
+		    </div>
+		  </div> 
+	</div>
+</div>
+<div class="padding"></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12 center-block">	    
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Login</h4>
+				</div>	
+			 	<div class="panel-body">			        
+			            <div class="row">
+			            	<div class="col-md-1"></div>
+			                <div class="col-md-4">
+			                    <div class="panel panel-danger">
+			                        <div class="panel-heading">
+			                            <h4>Admin Login</h>
+			                        </div>
+			                        <div class="panel-body">
+			                            <div class="login-box">
+			                                <form action="admin/login.php" method="POST">			                                    
+			                                    <div class="form-group">
+			                                        <label for="username-email">
+			                                        Username</label> <input class=
+			                                        "form-control" id="username-email"
+			                                        placeholder="E-mail or Username" type=
+			                                        "text" name="uname" value=''>
+			                                    </div>
+			                                    <div class="form-group">
+			                                        <label for="password">Password</label>
+			                                        <input class="form-control" id=
+			                                        "password" placeholder="Password" name="password" type=
+			                                        "password" value=''>
+			                                    </div>
+			                                    <div class="input-group">
+			                                        <div class="checkbox">
+			                                            <label><input id="login-remember"
+			                                            name="remember" type="checkbox"
+			                                            value="1"> Remember me</label>
+			                                        </div>
+			                                    </div>
+			                                    <div class="form-group">
+			                                        <input class=
+			                                        "btn btn-default btn-login-submit btn-block m-t-md"
+			                                        type="submit" value="Login">
+			                                    </div>
+			                                </form>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="col-md-2"></div>
+				            <div class="col-md-4">
+				                <div class="panel panel-success">
+				                    <div class="panel-heading">
+				                        <h4>Student Login</h4>
+				                    </div>
+				                    <div class="panel-body">
+				                        <div class="login-box">
+				                            <form action="student/login.php" method="POST">				                                
+				                                <div class="form-group">
+				                                    <label for="username-email">Username</label> <input class=
+				                                    "form-control" id="username-email"
+				                                    placeholder="E-mail or Username" name="uname" type=
+				                                    "text" value=''>
+				                                </div>
+				                                <div class="form-group">
+				                                    <label for="password">Password</label>
+				                                    <input class="form-control" id="password"
+				                                    placeholder="Password" name="password" type="password" value=
+				                                    ''>
+				                                </div>				                                
+				                                <div class="form-group">
+				                                    <input class=
+				                                    "btn btn-default btn-login-submit btn-block m-t-md"
+				                                    type="submit" value="Login">
+				                                </div>
+				                                <div class="form-group">
+				                                    <p class="text-center m-t-xs text-sm">Do
+				                                    not have an account?</p><a class=
+				                                    "btn btn-info btn-block m-t-md" href="register.php">Create an account</a>
+				                                </div>
+				                            </form>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+			            </div>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+</div>
+<?php include 'footer.php'; ?>
 </body>
-</html>	
+</html>
 
-<!-- {rv{@qsurMtBkEt@eE@eB@kB]]i@n@}AhAm@|AUpBUlBJ|A?lALnAp@m@ -->
+
+

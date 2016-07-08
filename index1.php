@@ -22,7 +22,7 @@
       }
 </style>
 
-  <title>Mini Project</title>
+	<title>Mini Project</title>
 </head>
 <body>
 <header>
@@ -54,7 +54,16 @@
 
           </ul>
         </li>
-        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Active Users</a></li>
+            <li><a href="#">Recent Users</a></li>
+            <li><a href="#">User locations</a></li>
+            <li role="separator" class="divider"></li>
+
+          </ul>
+        </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -141,10 +150,10 @@
                   </ul>
                 </li>
                 <li>
-                    <a href="service.html" target="">Services</a>
+                    <a href="#">Services</a>
                 </li>
                 <li>
-                    <a href="contact.html" target="_blank">Contact</a>
+                    <a href="#">Contact</a>
                 </li>
                 
             </ul>
@@ -188,7 +197,11 @@ function initMap() {
 {lat : 9.951346643479768 ,lng : 76.63173884153366 },
 {lat : 9.95165309849122 ,lng : 76.63070887327194 },
 {lat : 9.951748205160428 ,lng : 76.62985056638718 }
+
   ];
+
+  var cord = google.maps.geometry.encoding.decodePath('{rv{@qsurMtBkEt@eE@eB@kB]]i@n@}AhAm@|AUpBUlBJ|A?lALnAp@m@');
+
 var origin_input = document.getElementById('place-input');
   var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
   origin_autocomplete.addListener('place_changed', function() {
@@ -205,13 +218,15 @@ var origin_input = document.getElementById('place-input');
 
 });
 
-  var VJC = new google.maps.Polygon({paths: triangleCoords});
+  var VJC = new google.maps.Polygon({paths: cord});
 
   google.maps.event.addListener(map, 'click', function(e) {
     var resultColor =
         google.maps.geometry.poly.containsLocation(e.latLng, VJC) ?
         alert("User inside") :
         alert("User outside");
+
+        console.log(e.latLng);
 
     new google.maps.Marker({
       position: e.latLng,
@@ -289,4 +304,6 @@ function gcode(pid) {
     
 
 </body>
-</html> 
+</html>	
+
+<!-- {rv{@qsurMtBkEt@eE@eB@kB]]i@n@}AhAm@|AUpBUlBJ|A?lALnAp@m@ -->

@@ -1,3 +1,31 @@
+<?php
+$status = '';
+if($_POST)
+{
+   require_once("secure/db.php");
+
+   $full_name = mysqli_real_escape_string($db,$_POST['full_name']);
+   $email = mysqli_real_escape_string($db,$_POST['email']);
+   $password = mysqli_real_escape_string($db,$_POST['password']);
+   $username = mysqli_real_escape_string($db,$_POST['username']);
+
+   $query = "INSERT INTO student(username,full_name,password,email)  VALUES ('$username','$full_name','$password','$email') ";
+
+   $result = mysqli_query($db,$query);
+
+   if($result)
+   {
+    $status =  'success';
+   }
+   else
+   {
+    $status =  'fail';
+   }
+
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,28 +77,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="admin.php">Admin</a></li>
-        <li><a href="college.php">Colleges</a></li>
-        <li><a href="university.php">University</a></li>
-        <li><a href="quest.html">Quest</a></li>
-        <li><a href="student.php">Student</a></li> 
-        <li><a href="quest_view.php">View Previous Questions</a></li>  
-        <li><a href="http://syllabkerala.in/forum">Forum</a></li>               
-             
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-              
-      </ul>
-    </div><!-- /.navbar-collapse -->
+    
   </div><!-- /.container-fluid -->
 </nav>
 </header>
@@ -344,93 +351,64 @@ body {
 		<div class="col-lg-12 center-block">	    
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4>Login</h4>
+					<h4>Signup</h4>
 				</div>	
 			 	<div class="panel-body">			        
-			            <div class="row">
-			            	<div class="col-md-1"></div>
-			                <div class="col-md-4">
-			                    <div class="panel panel-danger">
-			                        <div class="panel-heading">
-			                            <h4>Admin Login</h>
-			                        </div>
-			                        <div class="panel-body">
-			                            <div class="login-box">
-			                                <form action="admin/login.php" method="POST">			                                    
-			                                    <div class="form-group">
-			                                        <label for="username-email">
-			                                        Username</label> <input class=
-			                                        "form-control" id="username-email"
-			                                        placeholder="E-mail or Username" type=
-			                                        "text" name="uname" value=''>
-			                                    </div>
-			                                    <div class="form-group">
-			                                        <label for="password">Password</label>
-			                                        <input class="form-control" id=
-			                                        "password" placeholder="Password" name="password" type=
-			                                        "password" value=''>
-			                                    </div>
-			                                    <div class="input-group">
-			                                        <div class="checkbox">
-			                                            <label><input id="login-remember"
-			                                            name="remember" type="checkbox"
-			                                            value="1"> Remember me</label>
-			                                        </div>
-			                                    </div>
-			                                    <div class="form-group">
-			                                        <input class=
-			                                        "btn btn-default btn-login-submit btn-block m-t-md"
-			                                        type="submit" value="Login">
-			                                    </div>
-			                                </form>
-			                            </div>
-			                        </div>
-			                    </div>
-			                </div>
-			                <div class="col-md-2"></div>
-				            <div class="col-md-4">
-				                <div class="panel panel-success">
-				                    <div class="panel-heading">
-				                        <h4>Student Login</h4>
-				                    </div>
-				                    <div class="panel-body">
-				                        <div class="login-box">
-				                            <form action="student/login.php" method="POST">				                                
-				                                <div class="form-group">
-				                                    <label for="username-email">Username</label> <input class=
-				                                    "form-control" id="username-email"
-				                                    placeholder="E-mail or Username" name="uname" type=
-				                                    "text" value=''>
-				                                </div>
-				                                <div class="form-group">
-				                                    <label for="password">Password</label>
-				                                    <input class="form-control" id="password"
-				                                    placeholder="Password" name="password" type="password" value=
-				                                    ''>
-				                                </div>				                                
-				                                <div class="form-group">
-				                                    <input class=
-				                                    "btn btn-default btn-login-submit btn-block m-t-md"
-				                                    type="submit" value="Login">
-				                                </div>
-				                                <div class="form-group">
-				                                    <p class="text-center m-t-xs text-sm">Do
-				                                    not have an account?</p><a class=
-				                                    "btn btn-default btn-block m-t-md" href=
-				                                    "/register/">Create an account</a>
-				                                </div>
-				                            </form>
-				                        </div>
-				                    </div>
-				                </div>
-				            </div>
-			            </div>
-		        </div>
+          <div class="row">			            			                			               
+            <div class="col-lg-5">
+              <?php if($status=='success'): ?>
+                  <div class="alert alert-success text-center"><a href="#" class="close" data-dismiss="alert">×</a> Registration success!</div>
+              <?php endif; if($status=='fail'): ?>
+              <div class="alert alert-danger text-center"><a href="#" class="close" data-dismiss="alert">×</a> Something went wrong. Try another Username/Email!</div>
+            <?php endif; ?>
+              <div class="panel panel-success">
+                  <div class="panel-heading">
+                      <h4>Complete your Registration</h4>
+                  </div>
+                  <div class="panel-body">
+                      <div class="login-box">
+                          <form action="" method="POST">
+
+                              <div class="form-group">
+                                  <label for="username-email">Name</label> 
+                                  <input class="form-control" placeholder="Enter your full name" name="full_name" type="text" value='' required>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="username-email">Username</label> 
+                                  <input class="form-control" placeholder="Username" name="username" type="text" value='' required>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="username-email">Email ID</label> 
+                                  <input class="form-control" placeholder="Enter your Email ID" name="email" type="email" value='' required>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="password">Password</label>
+                                  <input class="form-control" id="password"
+                                  placeholder="Password" name="password" type="password" value=
+                                  ''>
+                              </div>				                                
+                              <div class="form-group">
+                                  <input class="btn btn-success btn-login-submit btn-block m-t-md"
+                                  type="submit" value="Create Account">
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <img src="assets/images/reg.jpg" class="img-responsive img-thumbnail">
+            </div>
+          </div>		        
 		    </div>
 	    </div>
     </div>
+  </div>
 </div>
-
+<?php include('footer.php'); ?>
 </body>
 </html>
 
